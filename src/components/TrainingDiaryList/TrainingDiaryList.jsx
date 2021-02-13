@@ -8,6 +8,11 @@ function TrainingDiaryList(props) {
   const onDelete = (id) => {
     props.onDelete(id)
   }
+
+  const onEdit = (id) => {
+    props.onEdit(id)
+  }
+
   return (
     <div className="TrainingDiaryList">
       <div className="TrainingDiaryList-titles">
@@ -18,10 +23,13 @@ function TrainingDiaryList(props) {
       <ul className="TrainingDiaryList-list">
         {props.data.map((o) => (
           <li key={o.id} className="TrainingDiaryList-list-item">
-            <TrainingDiaryListItem item={o} onDelete={onDelete} />
+            <TrainingDiaryListItem item={o} onDelete={onDelete} onEdit={onEdit} />
           </li>
         ))}
       </ul>
+      <div className="TrainingDiaryList-total">
+        {props.data.reduce((a, b) => a + +b.length, 0)}Km
+      </div>
     </div>
   )
 }

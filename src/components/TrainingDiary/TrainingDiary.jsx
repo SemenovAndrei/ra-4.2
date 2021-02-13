@@ -8,6 +8,7 @@ import { nanoid } from 'nanoid'
 function TrainingDiary(props) {
   const [form, setForm] = useState({
     name: '',
+    id: '',
   })
 
   const [data, setData] = useState(props.data)
@@ -17,6 +18,7 @@ function TrainingDiary(props) {
 
     setForm({
       name: '',
+      id: '',
     })
   }
 
@@ -26,6 +28,15 @@ function TrainingDiary(props) {
 
   const handleDelete = (id) => {
     setData((prev) => prev.filter((el) => el.id !== id))
+  }
+
+  const handleEdit = (id) => {
+    if (form.fieldDate && form.fieldLength) {
+      data.push({ id: nanoid(), date: form.fieldDate, length: form.fieldLength })
+    }
+    const item = data.find((el) => el.id === id)
+    setForm({ ...form, fieldDate: item.date, fieldLength: item.length })
+    handleDelete(id)
   }
 
   return (
@@ -42,6 +53,7 @@ function TrainingDiary(props) {
             return 1
           })}
           onDelete={handleDelete}
+          onEdit={handleEdit}
         />
       </div>
     </div>

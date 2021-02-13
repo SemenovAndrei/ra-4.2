@@ -3,7 +3,7 @@ import { nanoid } from 'nanoid'
 export const data = [
   {
     id: nanoid(),
-    date: '2021-2-12',
+    date: '2021-02-12',
     length: 123,
   },
   {

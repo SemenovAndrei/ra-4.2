@@ -8,12 +8,22 @@ function TrainingDiaryListItem(props) {
   const onDelete = (event) => {
     props.onDelete(event.target.dataset.id)
   }
+
+  const onEdit = (event) => {
+    props.onEdit(event.target.nextSibling.dataset.id)
+  }
+
   return (
     <div className="TrainingDiaryListItem">
       <div className="TrainingDiaryList-data">{date}</div>
       <div className="TrainingDiaryList-length">{props.item.length}</div>
       <div className="TrainingDiaryList-controls">
-        <button className="TrainingDiaryList-controls-edit material-icons">mode</button>
+        <button
+          className="TrainingDiaryList-controls-edit material-icons"
+          onClick={onEdit}
+        >
+          mode
+        </button>
         <button
           data-id={props.item.id}
           className="TrainingDiaryList-controls-delete material-icons"
