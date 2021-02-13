@@ -1,6 +1,7 @@
 import React from 'react'
 import './TrainingDiaryForm.css'
 import PropTypes from 'prop-types'
+import checkValid from './checkValid'
 
 function TrainingDiaryForm(props) {
   const form = props.form
@@ -12,28 +13,11 @@ function TrainingDiaryForm(props) {
   const onSubmit = (event) => {
     event.preventDefault()
 
-    Array.from(event.target).forEach((o) => {
-      if (!o.name) {
-        return
-      }
+    if (checkValid(event.target[0]) || checkValid(event.target[1])) {
+      return
+    }
 
-      if (o.value === '') {
-        const field = document.querySelector(`.${o.classList.value}`)
-        field.style.borderColor = 'red'
-        setTimeout(() => field.removeAttribute('style'), 1000)
-        return
-      }
-
-      return props.onSubmit(event.target[0].value, event.target[1].value)
-    })
-
-    // if (!event.target[1].value) {
-    //   const field = document.querySelector('.TrainingDiaryForm-fieldLength')
-    //   field.classList.add('notValid')
-    //   setTimeout(() => field.classList.remove('notValid'), 1000)
-    // }
-
-    // props.onSubmit(event.target[0].value, event.target[1].value)
+    return props.onSubmit(event.target[0].value, event.target[1].value)
   }
 
   return (
