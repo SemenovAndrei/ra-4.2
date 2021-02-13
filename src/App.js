@@ -1,9 +1,10 @@
 import './App.css'
+import TrainingDiary from './components/TrainingDiary/TrainingDiary'
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <TrainingDiary />
     </div>
   )
 }

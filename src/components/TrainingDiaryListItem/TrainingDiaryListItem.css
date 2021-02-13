@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.TrainingDiaryListItem {
+  display: flex;
+  justify-content: space-between;
+}
+
+.TrainingDiaryList-data,
+.TrainingDiaryList-length {
+  width: 35%;
+}
+
+.TrainingDiaryList-controls {
+  display: flex;
+  justify-content: space-evenly;
+  width: 15%;
+}
+
+.TrainingDiaryList-controls-edit,
+.TrainingDiaryList-controls-delete {
+  border-style: none;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+.TrainingDiaryList-controls-edit {
+  margin-right: 10px;
+}

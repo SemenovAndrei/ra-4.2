@@ -1,0 +1,28 @@
+
+
+.TrainingDiaryList-titles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.TrainingDiaryList-title {
+  width: 35%;
+}
+
+.TrainingDiaryList-title:last-child {
+  width: 15%;
+}
+
+.TrainingDiaryList-list {
+  min-height: 50px;
+  margin: 10px 0;
+  padding: 10px;
+  list-style-type: none;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+.TrainingDiaryList-list-item:not(:last-child) {
+  margin-bottom: 10px;
+
+}
