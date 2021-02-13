@@ -51,6 +51,8 @@ function TrainingDiaryForm(props) {
 
 TrainingDiaryForm.propTypes = {
   form: PropTypes.object.isRequired,
+  onChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 }
 
 export default TrainingDiaryForm
