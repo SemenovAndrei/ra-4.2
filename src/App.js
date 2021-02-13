@@ -1,10 +1,11 @@
 import './App.css'
 import TrainingDiary from './components/TrainingDiary/TrainingDiary'
+import data from './data'
 
 function App() {
   return (
     <div className="App">
-      <TrainingDiary />
+      <TrainingDiary data={data} />
     </div>
   )
 }

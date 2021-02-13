@@ -5,7 +5,9 @@ import './TrainingDiaryList.css'
 import TrainingDiaryListItem from '../TrainingDiaryListItem/TrainingDiaryListItem'
 
 function TrainingDiaryList(props) {
-  console.log(props.data)
+  const onDelete = (id) => {
+    props.onDelete(id)
+  }
   return (
     <div className="TrainingDiaryList">
       <div className="TrainingDiaryList-titles">
@@ -16,7 +18,7 @@ function TrainingDiaryList(props) {
       <ul className="TrainingDiaryList-list">
         {props.data.map((o) => (
           <li key={o.id} className="TrainingDiaryList-list-item">
-            <TrainingDiaryListItem item={o} />
+            <TrainingDiaryListItem item={o} onDelete={onDelete} />
           </li>
         ))}
       </ul>

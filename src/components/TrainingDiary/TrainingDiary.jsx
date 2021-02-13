@@ -10,7 +10,7 @@ function TrainingDiary(props) {
     name: '',
   })
 
-  const data = props.data
+  const [data, setData] = useState(props.data)
 
   const handleSubmit = (fieldDate, fieldLength) => {
     data.push({ id: nanoid(), date: fieldDate, length: fieldLength })
@@ -22,6 +22,10 @@ function TrainingDiary(props) {
 
   const handleChange = ({ target }) => {
     setForm({ ...form, [target.name]: target.value })
+  }
+
+  const handleDelete = (id) => {
+    setData((prev) => prev.filter((el) => el.id !== id))
   }
 
   return (
@@ -37,6 +41,7 @@ function TrainingDiary(props) {
             }
             return 1
           })}
+          onDelete={handleDelete}
         />
       </div>
     </div>

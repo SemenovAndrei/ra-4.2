@@ -36,7 +36,7 @@ function TrainingDiaryForm(props) {
       <label className="TrainingDiaryForm-labelDate" htmlFor="fieldLength">
         Пройдено км
         <input
-          type="text"
+          type="number"
           className="TrainingDiaryForm-fieldLength"
           id="fieldLength"
           name="fieldLength"
